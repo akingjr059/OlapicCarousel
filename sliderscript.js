@@ -36,8 +36,24 @@ var getData = function() {
 	xhr.open("GET", "http://photorankapi-a.akamaihd.net/customers/215757/media/recent/?auth_token=0a40a13fd9d531110b4d6515ef0d6c529acdb59e81194132356a1b8903790c18", true);
 	xhr.send();
 	
-	var img = xhr.response.message;
-	console.log(img);
+	xhr.onreadystatechange = function() {
+	  	if (xhr.readyState == 4 && xhr.status == 200) {
+	  	    
+		  	//loadimage    
+		    var res = JSON.parse(xhr.response);
+		        
+			for (var y = 0; y < res.data._embedded.length; y++) {
+				        image = new Image();
+				        image.src = res.data._embedded[y].images.normal;
+				
+				        listItem = document.createElement("li");
+				        listItem.appendChild(image);
+						photoListFrag.appendChild(listItem);
+			}	
+			//adding photos to the unordered list
+			document.getElementById('photolist').appendChild(photoListFrag);
+  		}
+  	}	
 }
 
 
