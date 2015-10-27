@@ -1,26 +1,31 @@
-﻿//left button
+﻿var isMoving = false;
+
+//left button
 var left = function(){
-		
-				$('#carousel ul').animate({'left' : -420}, 300, function(){
-  
-                //get the first list item and put it after the last list item  
-                $('#carousel ul li:last').after($('#carousel ul li:first'));    
-                $('#carousel ul').css({'left' : '-210px'});
-				
-				});           
+	if (!isMoving) {
+		isMoving = true;
+		$('#carousel ul').animate({'left' : -420}, 300, function(){
+			//get the first list item and put it after the last list item  
+			$('#carousel ul li:last').after($('#carousel ul li:first'));    
+			$('#carousel ul').css({'left' : '-210px'});
+			isMoving = false;
+		});
+           
+	}
 }
 
 
 //right button
 var right = function(){
-
-            	$('#carousel ul').animate({'left' : 0}, 300, function(){  
-  
-            	/* when sliding to left we are moving the last item before the first item */  
-            	$('#carousel ul li:first').before($('#carousel ul li:last'));   
-            	$('#carousel ul').css({'left' : '-210px'});
-              
-   				});
+	if (!isMoving) {
+		isMoving = true;
+		$('#carousel ul').animate({'left' : 0}, 300, function(){  
+			/* when sliding to left we are moving the last item before the first item */  
+			$('#carousel ul li:first').before($('#carousel ul li:last'));   
+			$('#carousel ul').css({'left' : '-210px'});
+		  	isMoving = false;
+		});
+	}
 }
 
 
