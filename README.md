@@ -17,6 +17,6 @@ Then I decided to use the Chrome Advanced RESTlet Client to test the calls in a 
 
 After that I had some trouble figuring out how to properly reference the links that were being returned in the JSON response.  So I took a look at StackOverflow and asked around about how to properly reference this type of response. 
 
-Turns out I needed to parse the JSON response to properly reference the links.  So once I figured that out, I just wrote a for loop to do that for all 20 array elements and load them into the list items in the page. There was an issue with reading the response one more time, but I used the same methods for that solution.
+Turns out I needed to parse the JSON response to properly reference the links.  So once I figured that out, I just wrote a for loop to do that for all 20 array elements and load them into the list items in the page. There was an issue with reading the response one more time, but I used the same methods for that solution and did some Q&A on stackexchange.  
 
 ...Man I learned a lot in the last 48 hours. 
