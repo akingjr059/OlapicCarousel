@@ -1,4 +1,4 @@
-﻿var isMoving = false;
+var isMoving = false;
 
 //left button
 var left = function(){
@@ -31,14 +31,14 @@ var right = function(){
 
 //XMLHttp Request from the Olapic API
 var getData = function() {
-	
+	$("#carousel ul li:first").before($("#carousel ul li:last"));	
 	var xhr = new XMLHttpRequest(),
 		photoListFrag = document.createDocumentFragment(),
 		srcLink,
 		image,
 		listItem;
 	
-	xhr.open("GET", "http://photorankapi-a.akamaihd.net/customers/215757/media/recent/?auth_token=0a40a13fd9d531110b4d6515ef0d6c529acdb59e81194132356a1b8903790c18", true);
+	xhr.open("GET", "https://photorankapi-a.akamaihd.net/customers/215757/media/recent/?auth_token=0a40a13fd9d531110b4d6515ef0d6c529acdb59e81194132356a1b8903790c18", true);
 	xhr.send();
 	
 	xhr.onreadystatechange = function() {
@@ -63,7 +63,5 @@ var getData = function() {
 
 
 //Run Functions on Page Load
-$(document).ready(function(){
-	$("#carousel ul li:first").before($("#carousel ul li:last"));	
-	getData();
-});
+
+getData();

@@ -20,3 +20,5 @@ After that I had some trouble figuring out how to properly reference the links t
 Turns out I needed to parse the JSON response to properly reference the links.  So once I figured that out, I just wrote a for loop to do that for all 20 array elements and load them into the list items in the page. There was an issue with reading the response one more time, but I used the same methods for that solution and did some Q&A on stackexchange.  
 
 ...Man I learned a lot in the last 48 hours. 
+
+Testing git update
